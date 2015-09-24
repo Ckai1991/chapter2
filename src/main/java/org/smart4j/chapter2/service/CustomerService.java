@@ -1,5 +1,6 @@
 package org.smart4j.chapter2.service;
 
+import org.smart4j.chapter2.helper.DatabaseHelper;
 import org.smart4j.chapter2.model.Customer;
 
 import java.util.List;
@@ -13,7 +14,10 @@ public class CustomerService {
      * 获取客户列表
      */
     public List<Customer> getCustomerList(){
-        return null;
+
+        String sql = "SELECT * FROM customer";
+        return DatabaseHelper.queryEntityList(Customer.class,sql);
+
     }
 
     /**
